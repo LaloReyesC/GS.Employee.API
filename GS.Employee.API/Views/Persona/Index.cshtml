@@ -1,0 +1,43 @@
+﻿@model List<Persona>
+
+@{
+    ViewData["Title"] = "Listado de personas";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Lista de Personas</h2>
+
+    <a href="@Url.Action("Crear")" class="btn btn-primary mb-3">Agregar Persona</a>
+
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombres</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Nivel Educativo</th>
+                <th>Celular</th>
+                <th>Estatus</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var persona in Model)
+            {
+                <tr>
+                    <td>@persona.Nombres</td>
+                    <td>@persona.ApellidoPaterno</td>
+                    <td>@persona.ApellidoMaterno</td>
+                    <td>@persona.FechaNacimiento.ToString("yyyy-MM-dd")</td>
+                    <td>@persona.NivelEducativo</td>
+                    <td>@persona.NumeroCelular</td>
+                    <td>@(persona.Estatus ? "Activo" : "Inactivo")</td>
+                    <td>
+                        <a href="@Url.Action("Editar", new { id = persona.Id })" class="btn btn-outline-info btn-sm">Ver detalles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
