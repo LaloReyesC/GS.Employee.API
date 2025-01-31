@@ -1,4 +1,4 @@
-﻿namespace GS.Employee.API.Models;
+﻿namespace GS.Employee.API.Core.Entities;
 
 public class Persona
 {

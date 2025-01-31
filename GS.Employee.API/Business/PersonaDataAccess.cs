@@ -49,6 +49,7 @@ public class PersonaDataAccess(IDbConnection dbConnection) : IDisposable, IPerso
     public bool EliminarPersona(int id)
     {
         var parameters = new { id };
+
         int affectedRosw = _dbConnection.Execute("sp_eliminar_persona", parameters, commandType: System.Data.CommandType.StoredProcedure);
 
         return affectedRosw > 0;
