@@ -1,20 +1,16 @@
-﻿using Dapper;
-using GS.Employee.API.Models;
-using System.Data;
-
-namespace GS.Employee.API.Business;
+﻿namespace GS.Employee.API.Business;
 
 public class PersonaDataAccess(IDbConnection dbConnection) : IDisposable, IPersonaDataAccess
 {
+    #region Fields
     private readonly IDbConnection _dbConnection = dbConnection;
+    #endregion
 
-    // Método para obtener todas las personas
     public List<Persona> ObtenerPersonas()
     {
         return _dbConnection.Query<Persona>("sp_obtener_personas", commandType: System.Data.CommandType.StoredProcedure).ToList();
     }
 
-    // Método para insertar una nueva persona
     public void InsertarPersona(Persona persona)
     {
         var parameters = new
@@ -31,7 +27,6 @@ public class PersonaDataAccess(IDbConnection dbConnection) : IDisposable, IPerso
         _dbConnection.Execute("sp_insertar_persona", parameters, commandType: System.Data.CommandType.StoredProcedure);
     }
 
-    // Método para actualizar una persona
     public bool ActualizarPersona(Persona persona)
     {
         var parameters = new
@@ -51,7 +46,6 @@ public class PersonaDataAccess(IDbConnection dbConnection) : IDisposable, IPerso
         return affectedRosw > 0;
     }
 
-    // Método para eliminar una persona
     public bool EliminarPersona(int id)
     {
         var parameters = new { id };

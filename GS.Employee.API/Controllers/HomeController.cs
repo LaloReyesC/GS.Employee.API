@@ -1,7 +1,3 @@
-using System.Diagnostics;
-using GS.Employee.API.Models;
-using Microsoft.AspNetCore.Mvc;
-
 namespace GS.Employee.API.Controllers
 {
     public class HomeController : Controller
