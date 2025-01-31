@@ -5,6 +5,11 @@ VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Employee.API", "GS.Employee.API\GS.Employee.API.csproj", "{8DFF2606-FD74-4235-B776-BEDFEA09C5DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94AF487D-1B57-4E5D-BBC3-FD240CC7D24E}"
+	ProjectSection(SolutionItems) = preProject
+		Persona-script.sql = Persona-script.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
